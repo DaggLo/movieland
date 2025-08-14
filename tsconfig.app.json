@@ -18,7 +18,13 @@
     /* Absolute imports */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"],
+      "@app": ["./src/app/index"],
+      "@pages": ["./src/pages/index"],
+      "@widgets": ["./src/widgets/index"],
+      "@features": ["src/features/index"],
+      "@entities": ["./src/entities/index"],
+      "@shared": ["./src/shared/index"]
     },
 
     /* Linting */
