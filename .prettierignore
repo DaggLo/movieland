@@ -23,7 +23,11 @@ Thumbs.db
 
 # Git
 .git/
+.gitignore
+.gitlab-ci.yml
 
 # Other
 coverage/
 .nyc_output/
+.prettierrc
+.vscode
