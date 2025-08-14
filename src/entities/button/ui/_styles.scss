@@ -1,0 +1,129 @@
+@use "@shared/ui" as *;
+
+@include block('button') {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 64px;
+  position: relative;
+
+  border-color: currentColor;
+  font-family: inherit;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
+  appearance: none;
+
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+
+    &:not([disabled]) {
+      cursor: pointer;
+    }
+    &[disabled] {
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    &:hover:not([disabled]) {
+      opacity: 0.8;
+    }
+    &:active:not([disabled]) {
+      opacity: 0.6;
+    }
+
+
+  @include mod('size', 's') {
+    padding: $spacing-xs $spacing-s;
+    border-radius: $border-radius-s;
+
+    font-size: $font-size-s;
+    line-height: $line-height-normal;
+    font-weight: $font-weight-bold;
+  }
+  @include mod('size', 'm') {
+    padding: $spacing-s $spacing-m;
+    border-radius: $border-radius-s;
+
+    font-size: $font-size-m;
+    line-height: $line-height-normal;
+    font-weight: $font-weight-bold;
+  }
+
+
+  @include mod('type', 'contained-primary') {
+    color: $default-color-light;
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+  }
+  @include mod('type', 'contained-default') {
+    color: $primary-color;
+    background-color: $default-color-light;
+    border: 1px solid $default-color-light;
+  }
+  @include mod('type', 'outlined-primary') {
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    background: none;
+  }
+  @include mod('type', 'outlined-default') {
+    color: $default-color-light;
+    border: 1px solid $default-color-light;
+    background: none;
+  }
+  @include mod('type', 'text-primary') {
+    color: $primary-color;
+    border: none;
+    background: none;
+  }
+  @include mod('type', 'text-default') {
+    color: $default-color-light;
+    border: none;
+    background: none;
+  }
+
+  @include mod('full-width') {
+    width: 100%;
+  }
+
+  @include el('label') {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    opacity: 1;
+
+    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @include mod('hidden') {
+      opacity: 0;
+    }
+  }
+
+  @include el('spinner') {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  @include el('start-icon') {
+    display: inherit;
+    margin-right: $spacing-s;
+
+    @at-root svg#{&} {
+      margin-left: $spacing-xs;
+    }
+  }
+
+  @include el('end-icon') {
+    display: inherit;
+    margin-right: $spacing-s;
+
+    @at-root svg#{&} {
+      margin-left: $spacing-xs;
+    }
+  }
+}

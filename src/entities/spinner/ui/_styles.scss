@@ -1,0 +1,65 @@
+@use "@shared/ui" as *;
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes circle-animation {
+  0% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+  100% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -125px;
+  }
+}
+
+@include block('spinner') {
+  display: inline-block;
+
+  animation: rotate 1.4s linear infinite;
+
+  @include mod('color', 'primary') {
+    color: $primary-color,
+  }
+  @include mod('color', 'secondary') {
+    color: $secondary-color,
+  }
+  @include mod('color', 'default') {
+    color: $default-color-light,
+  }
+
+  @include mod('size', 's') {
+    width: 20px;
+    height: 20px;
+  }
+  @include mod('size', 'm') {
+    width: 24px;
+    height: 24px;
+  }
+  @include mod('size', 'l') {
+    width: 28px;
+    height: 28px;
+  }
+  @include mod('size', 'xl') {
+    width: 32px;
+    height: 32px;
+  }
+
+  @include el('circle') {
+    stroke: currentColor;
+    stroke-dasharray: 80px, 200px;
+    stroke-dashoffset: 0;
+    animation: circle-animation 1.4s ease-in-out infinite;
+  }
+}

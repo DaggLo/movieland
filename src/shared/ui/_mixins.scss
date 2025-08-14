@@ -1,0 +1,20 @@
+@use "bem";
+@use "breaking-points";
+
+@mixin tablet() {
+  @media (max-width: $tablet-to-desktop) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: $mobile-to-tablet) {
+    @content;
+  }
+}
+
+@mixin mediaBG() {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
