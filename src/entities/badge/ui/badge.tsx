@@ -3,8 +3,8 @@ import { type BadgeProps } from "../lib";
 
 const block = cn('badge');
 
-export function Badge({ variant = "primary", children, className }: BadgeProps) {
+export function Badge({ children, className }: BadgeProps) {
   return (
-    <span className={block({ variant }, [className])}>{children}</span>
+    <span className={block(null, [className])}>{children}</span>
   );
 }

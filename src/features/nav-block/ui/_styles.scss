@@ -1,0 +1,55 @@
+@use "@shared/ui" as *;
+@use "@entetis/badge";
+@use "@entetis/button";
+@use "@entetis/spinner";
+
+@include block("nav-block") {
+  position: relative;
+
+  @include el("badge") {
+  }
+
+  @include el("item") {
+    @include mod("active") {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        border-radius: $border-radius-s $border-radius-s 0 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: $bg-color-default;
+      }
+    }
+  }
+
+  @include el("spinner") {
+    @include mod("color", "primary") {
+      color: $primary-color;
+    }
+    @include mod("color", "secondary") {
+      color: $secondary-color;
+    }
+    @include mod("color", "default") {
+      color: $default-color-light;
+    }
+
+    @include mod("size", "s") {
+      width: 20px;
+      height: 20px;
+    }
+    @include mod("size", "m") {
+      width: 24px;
+      height: 24px;
+    }
+    @include mod("size", "l") {
+      width: 28px;
+      height: 28px;
+    }
+    @include mod("size", "xl") {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

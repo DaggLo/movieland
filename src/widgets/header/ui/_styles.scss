@@ -1,0 +1,17 @@
+@use "@shared/scss" as *;
+@use "@entities/icon";
+@use "@entities/icon-button";
+@use "@entities/theme";
+@use "@entities/top-bar";
+@use "@features/nav-block";
+
+@include block("header") {
+  @include el("nav-items-container") {
+  }
+  @include el("icon-button") {
+  }
+  @include el("icon") {
+  }
+  @include el("theme-toggle") {
+  }
+}

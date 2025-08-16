@@ -1,0 +1,79 @@
+@use "@shared/ui" as *;
+
+$ease: cubic-bezier(0.25, 0, 0.3, 1);
+$ease-out: cubic-bezier(0, 0, 0, 1);
+$ease-elastic-1: cubic-bezier(0.5, 1.25, 0.75, 1.25);
+$ease-elastic-2: cubic-bezier(0.5, 1.5, 0.75, 1.25);
+
+@include block("theme-switcher") {
+  @include el("moon") {
+    transform-origin: center;
+    fill: $default-color-light;
+
+    & circle {
+      @media (prefers-reduced-motion: no-preference) {
+        transition: transform 0.25s $ease-out;
+
+        @supports (cx: 1) {
+          transition: cx 0.25s $ease-out;
+        }
+      }
+    }
+
+    @include mod("theme", "dark") {
+      & circle {
+        transform: translateX(-7px);
+
+        @supports (cx: 1) {
+          cx: 17;
+          transform: translateX(0);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+          transition-duration: 0.5s;
+          transition-delay: 0.25s;
+        }
+      }
+    }
+  }
+
+  @include el("sun") {
+    transform-origin: center;
+    fill: $default-color-light;
+
+    @include mod("theme", "dark") {
+      transform: scale(1.75);
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition-timing-function: $ease;
+        transition-duration: 0.25s;
+        transform: scale(1.75);
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform 0.5s $ease-elastic-1;
+    }
+  }
+
+  @include el("sun-beams") {
+    transform-origin: center;
+    stroke: $default-color-light;
+    stroke-width: 2px;
+
+    @include mod("theme", "dark") {
+      opacity: 0;
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition-duration: 0.15s;
+        transform: rotateZ(-25deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        transform 0.5s $ease-elastic-2,
+        opacity 0.5s $ease;
+    }
+  }
+}

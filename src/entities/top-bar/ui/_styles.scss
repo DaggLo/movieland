@@ -1,0 +1,25 @@
+@use "@shared/ui" as *;
+
+@include block('top-bar') {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 100%;
+  z-index: 2;
+  position: sticky;
+  top: 0;
+
+  border-bottom: 1px solid $line-color-default;
+  box-shadow: $shadow-md;
+  color: $text-color-default;
+  background-color: $primary-color;
+
+  @include el('inner-container') {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 56px;
+    padding-left: $spacing-l;
+    padding-right: $spacing-l;
+  }
+}

@@ -1,0 +1,40 @@
+@use "@shared/ui" as *;
+@use "icon";
+
+@include block("theme-toggle") {
+  @include el("button") {
+    &:hover {
+      @include el("moon") {
+        // fill: $tertiary-color;
+        opacity: 0.8;
+      }
+
+      @include el("sun") {
+        // fill: $tertiary-color;
+        opacity: 0.8;
+      }
+
+      @include el("sun-beams") {
+        // fill: $tertiary-color;
+        opacity: 0.8;
+      }
+    }
+
+    &:focus-visible {
+      @include el("moon") {
+        // fill: $tertiary-color;
+        opacity: 0.6;
+      }
+
+      @include el("sun") {
+        // fill: $tertiary-color;
+        opacity: 0.6;
+      }
+
+      @include el("sun-beams") {
+        // fill: $tertiary-color;
+        opacity: 0.6;
+      }
+    }
+  }
+}
