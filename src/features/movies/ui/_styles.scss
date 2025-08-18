@@ -1,0 +1,8 @@
+@use "@shared/scss" as *;
+
+@include block("movies-list") {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(rem(220), 1fr));
+  gap: $spacing-l;
+  justify-content: center;
+}

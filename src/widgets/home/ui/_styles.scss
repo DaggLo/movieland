@@ -1,0 +1,7 @@
+@use "@shared/scss" as *;
+@use "@features/movie";
+
+@include block("home-page") {
+  @include el("movies-list") {
+  }
+}
