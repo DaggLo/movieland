@@ -1,6 +1,6 @@
-@use "@shared/ui" as *;
+@use "@shared/scss" as *;
 
-@include block('top-bar') {
+@include block("top-bar") {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -14,7 +14,7 @@
   color: $text-color-default;
   background-color: $primary-color;
 
-  @include el('inner-container') {
+  @include el("inner-container") {
     display: flex;
     align-items: center;
     width: 100%;

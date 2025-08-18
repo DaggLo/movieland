@@ -1,6 +1,6 @@
-@use "@shared/ui" as *;
+@use "@shared/scss" as *;
 
-@include block('button') {
+@include block("button") {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +27,7 @@
     opacity: 0.6;
   }
 
-  @include mod('disabled') {
+  @include mod("disabled") {
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.5;
@@ -37,7 +37,7 @@
     }
   }
 
-  @include el('badge') {
+  @include el("badge") {
     display: inherit;
     margin-right: $spacing-s;
 
@@ -46,14 +46,14 @@
     }
   }
 
-  @include el('inner') {
+  @include el("inner") {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 100%;
   }
 
-  @include el('spinner') {
+  @include el("spinner") {
     position: absolute;
     display: flex;
     left: 50%;

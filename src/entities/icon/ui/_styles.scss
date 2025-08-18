@@ -1,19 +1,19 @@
-@use "@shared/ui" as *;
+@use "@shared/scss" as *;
 
-@include block('icon') {
+@include block("icon") {
   display: inline-block;
   user-select: none;
 
-  @include mod('color', 'default') {
+  @include mod("color", "default") {
     color: $default-color-light;
   }
-  @include mod('color', 'primary') {
+  @include mod("color", "primary") {
     color: $primary-color;
   }
-  @include mod('color', 'secondary') {
+  @include mod("color", "secondary") {
     color: $secondary-color;
   }
-  @include mod('color', 'tertiary') {
+  @include mod("color", "tertiary") {
     color: $tertiary-color;
   }
 }

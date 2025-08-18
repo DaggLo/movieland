@@ -1,6 +1,6 @@
-@use "@shared/ui" as *;
+@use "@shared/scss" as *;
 
-@include block('icon') {
+@include block("icon") {
   display: inline-flex;
   width: fit-content;
   padding: $spacing-xs;
@@ -27,28 +27,28 @@
     opacity: 0.6;
   }
 
-  @include mod('color', 'default') {
+  @include mod("color", "default") {
     color: $default-color-light;
   }
-  @include mod('color', 'primary') {
+  @include mod("color", "primary") {
     color: $primary-color;
   }
-  @include mod('color', 'secondary') {
+  @include mod("color", "secondary") {
     color: $secondary-color;
   }
-  @include mod('color', 'tertiary') {
+  @include mod("color", "tertiary") {
     color: $tertiary-color;
   }
 
-  @include mod('size', 's') {
+  @include mod("size", "s") {
     width: 16px;
     height: 16px;
   }
-  @include mod('size', 'm') {
+  @include mod("size", "m") {
     width: 24px;
     height: 24px;
   }
-  @include mod('size', 'l') {
+  @include mod("size", "l") {
     width: 32px;
     height: 32px;
   }
